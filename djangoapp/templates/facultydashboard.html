@@ -1,0 +1,102 @@
+{% extends 'index.html' %}
+{%load static%}
+	{% block content %}
+	<head>
+        <meta charset="UTF-8">
+        <title>Faculty</title>
+		<link rel="stylesheet" href="{% static 'my_apps/css/stu_dashboard.css' %}">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+		
+	</head>
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Sidebar -->
+			<nav id="sidebar" class="col-md-3 col-lg-2 d-md-block  sidebar" style="background:#E8E8E8;">
+				<div class="position-sticky pt-3">
+					<center>
+					{% if profile_picture %}
+                    <img src="{{ profile_picture }}" alt="Profile Picture" class="rounded-circle" width="150px" height="150px" >
+                {% else %}
+                    <img src="{% static 'default-profile.png' %}" alt="Default Profile" class="rounded-circle" width="100" height="100">
+                {% endif %}
+					</center>
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="/facultyclass/">
+								<i class="bi bi-tv"></i>
+								Live Classes
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<i class="bi bi-activity"></i>
+								Activity
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<i class="bi bi-list-check"></i>
+								Survey
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/facultycourseselection/">
+								<i class="bi bi-journal-text"></i>
+								Subjects
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/applicationapproval/">
+								<i class="bi bi-pencil-square"></i>
+								Students Applications
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								<i class="bi bi-ui-checks-grid"></i>
+								Time Table
+							</a>
+							
+						<li class="nav-item">
+							<a class="nav-link" href="/attendance_faculty/">
+								<i class="bi bi-check2-square"></i>
+								Attendance
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/newsemester/">
+								<i class="bi bi-calendar"></i>
+								Semester
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+	
+			<!-- Main content -->
+			<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light">
+				<div
+					class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+					<h2>Welcome <span style="color: dodgerblue;">{{current_user}}</span>!</h2>
+					{% if current_user %}
+						<a class='btn btn-primary' href="{% url 'logout_faculty' %}">Logout</a>
+						{%endif%}
+					<button id="sidebarToggle" class="btn btn-primary d-md-none">
+							<i class="bi bi-list"></i> 
+						</button>
+				</div>
+				<p>Main content goes here.</p>
+
+			</main>
+		</div>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+	<script>
+	function toggleMenu() {
+		var nav = document.getElementById("sidebar");
+		sidebar.classList.toggle("active");
+	  }
+	</script>
+    {%endblock%}

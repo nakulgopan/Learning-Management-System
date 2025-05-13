@@ -1,0 +1,93 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'my_apps/css/department.css' %}">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark" id="Department">
+   Pricipal Desk
+</nav>
+
+<!-- Sidebar and Content -->
+<div class="container-fluid ">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar" style="height: 750px;cursor:pointer;background:rgb(224,224,224); ">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/ourcollege/" >
+                            <i class="bi bi-house-door-fill"></i>Our College
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/principaldesk/">
+                            <i class="bi bi-person-fill"></i> Pricipal Desk
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/Contactus/">
+                            <i class="bi bi-telephone-fill"></i> Contact Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/" >
+                            <i class="bi bi-arrow-left"></i> Back
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background:rgb(255, 255, 255); ">
+            <div id="main-content" class="content-box" style="align-item:center; background:rgb(255, 255, 255); color:black; font-family:times new roman; font-size:large;">
+                <center><h1>Principal</h1>
+                <h3>Greneral Intelligent Engineering College,Kaadoor(KDR)</h3>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="http://127.0.0.1:8000/static/my_apps/images/Gemini_Generated_Image_ac67zbac67zbac67.jpg" alt="HOD Image" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>Dr.Priyadarshini.N</h1>
+                            <p>Principal</p>
+                            <p> Professor</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </center>
+                        <b>
+                            <p style="font-family : times new roman; font-size:large;">
+                                The Principal of the institution belongs to the Computer Science and Engineering (CSE) department, with a doctoral degree and over two decades of teaching experience. She has contributed significantly to the field through numerous national and international research publications. Her academic journey reflects a strong foundation in emerging technologies, software development, and data-driven innovation.
+
+With her leadership, the institution places a strong emphasis on industry-relevant learning, especially in fields like Artificial Intelligence, Machine Learning, Cybersecurity, and Cloud Computing—core areas within CSE. The curriculum is continuously updated to keep pace with technological advancements and to equip students with skills that match global standards.
+
+Under her guidance, the college aims to foster an ecosystem that promotes academic excellence, research, and innovation. The focus remains on nurturing talent, encouraging critical thinking, and preparing students to excel in both higher education and the tech-driven workforce.
+
+
+                            </p>
+                        </b>
+                        
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- External JavaScript -->
+<script src="{% static 'my_apps/js/department.js' %}"></script>
+<script>let files = JSON.parse('{{ files|safe }}');</script>
+
+{% endblock %}

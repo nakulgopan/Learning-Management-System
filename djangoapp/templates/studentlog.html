@@ -1,0 +1,118 @@
+{% extends 'index.html' %}
+
+	{% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Student</title>
+        {%load static%}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'my_apps/css/studentregister.css' %}">
+    </head>
+    <body>
+        <form method="POST" class="post-form">
+            {%csrf_token%}
+            <div class='container'>
+                <br>
+                <div class='form-group row'>
+                    <label class="col-sm-1 col-form-label"></label>
+                    <div class='col-sm-4'>
+                        <h3>Student Registration</h3>
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-2 col-form-label'>First Name:</label>
+                    <div class='col-sm-4'>
+                        {{form.s_fname}}
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-2 col-form-label'>Last Name:</label>
+                    <div class='col-sm-4'>
+                        {{form.s_lname}}
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-2 col-form-label'>Date of Birth:</label>
+                    <div class='col-sm-4'>
+                        {{form.s_DOB}}
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-2 col-form-label'>Email:</label>
+                    <div class='col-sm-4'>
+                        {{form.semail}}
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-2 col-form-label'>Phone:</label>
+                    <div class='col-sm-4'>
+                        {{form.sphone}}
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-2 col-form-label'>Admission Number:</label>
+                    <div class='col-sm-4'>
+                        {{form.adm_no}}
+                    </div>
+                </div>
+                <div class='form-group row' id='semester'>
+                    <label class='col-sm-2 col-form-label'>Semester:</label>
+                    <div class='col-sm-4'>
+                        {{form.Semester}}
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-2 col-form-label'>Branch:</label>
+                    <div class='col-sm-4'>
+                        {{form.s_branch}}
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-2 col-form-label'>Profile Picture:</label>
+                    <div class='col-sm-4'>{{ form.picture }}</div>  
+                    
+                </div>
+                <div id="flash">
+                    {% if messages %}
+                      {% for message in messages %}
+                        <div class="alert alert-{{ message }} alert-danger">
+                          {{ message }}
+                        </div>
+                      {% endfor %}
+                    {% endif %}
+                    </div>
+                <div class='form-group row'>
+                    <label class='col-sm-2 col-form-label'>Register Number:</label>
+                    <div class='col-sm-4'>
+                        {{form.univ_no}}
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-2 col-form-label'>Username:</label>
+                    <div class='col-sm-4'>
+                        {{form.username}}
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-2 col-form-label'>Password:</label>
+                    <div class='col-sm-4'>
+                        {{form.s_password}}
+                    </div>
+                </div>
+                <div class='form-group row'>
+                    <label class='col-sm-1 col-form-label'></label>
+                    <div class='col-sm-4'>
+                        <button type='submit' class='btn btn-success'>Submit</button>
+                    </div>
+                </div>
+                </div>
+                </form>
+                <script>
+                    setTimeout(function () 
+                    {
+                     $('#flash').fadeOut('fast');
+                     },1000);
+                  </script> 
+                </body>
+                {%endblock%}
+                </html>

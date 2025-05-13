@@ -1,0 +1,130 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'my_apps/css/department.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark" id="Department">
+    College Union
+</nav>
+
+<!-- Sidebar and Content -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar" style=" cursor:pointer;background:rgb(224,224,224); ">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/courses/" >
+                            <i class="bi bi-tv"></i> Courses
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Admission/">
+                            <i class="bi bi-person-fill"></i>Admission
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/college_union/">
+                            <i class="bi bi-people-fill"></i> College Union
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ugc/">
+                            
+                            <i class="bi bi-activity"></i>UGC
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ktu.edu.in/academics/scheme">
+                            <i class="bi bi-journal-text"></i>  Syllabus
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://ktu.edu.in/home">
+                            <i class="bi bi-journal-text"></i>  KTU
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/civilengineering/" >
+                            <i class="bi bi-arrow-left"></i> Back
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background:rgb(255, 255, 255); height:850px;">
+            <div id="main-content" class="content-box" style="justify-items:center; background:rgb(255, 255, 255); color:black; font-family:times new roman; font-size:large;">
+                <div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">  <!-- auto slide every 3s -->
+
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+                      
+                    </div>
+                
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://cdn.musichouseschool.com/BandPlayingOnStage_1.jpg" class="d-block w-100" alt="Image 1" style="height:450px;width:100%;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://back.3blcdn.com/sites/default/files/styles/ratio_3_2/public/triplepundit/wide/more%20sustainable%20concerts.jpg?h=f4bc3890" class="d-block w-100" alt="Image 2" style="width:100%;height:450px; ">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.reed.edu/assets-main/images/hero/reed-campus-life-renn-fayre.jpg" class="d-block w-100" alt="Image 3" style="width:100%;height:450px ;">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?cs=srgb&dl=pexels-pixabay-267885.jpg&fm=jpg" class="d-block w-100" alt="Image 4" style="width:100%;height:450px ;">
+                        </div>
+                        
+                    </div>
+                
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+                      <b>
+                        <p style="font-family:times new roman; font-size:medium;">
+                            The College Union plays a vital role in promoting student welfare, organizing extracurricular activities, and serving as a bridge between the student community and the college administration. It provides a platform for students to express their views, develop leadership qualities, and actively participate in decision-making processes related to campus life. The union helps in cultivating a sense of responsibility, teamwork, and social awareness among students.
+
+At our institution, the student body is represented by the TechPulse Union, a dynamic and inclusive group elected annually through a democratic process. The union comprises a chairman, vice-chairman, general secretary, arts club secretary, magazine editor, and class representatives. Together, they work to enhance campus vibrancy and address student concerns, while ensuring smooth coordination of events and activities across departments.
+
+TechPulse Union takes the lead in organizing various programs throughout the academic year, including arts festivals, technical fests, sports meets, seminars, awareness drives, and cultural events. These events not only promote talent and creativity but also encourage healthy competition and unity among students. The union also collaborates with faculty and management to support social outreach programs, environmental initiatives, and student welfare campaigns.
+
+Through its active engagement, TechPulse Union has become an integral part of the college's identity. It fosters a strong sense of community, helps maintain a positive campus atmosphere, and ensures that students’ voices are heard and respected. The union continues to grow as a driving force behind student empowerment, holistic development, and institutional progress.
+
+
+
+                        </p>
+                      </b>
+                       
+                        
+                    </div>
+                                                                                              
+                    
+                  
+                
+
+  
+                 <script src="{% static 'my_apps/js/department.js' %}"></script>
+                </div>
+             </main>
+ 
+ {% endblock %}

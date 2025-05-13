@@ -1,0 +1,121 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'my_apps/css/department.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark" id="Department">
+   Computer Science and Engineering
+</nav>
+
+<!-- Sidebar and Content -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block  sidebar" style="cursor:pointer;background:rgb(224,224,224); ">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/csevission/" >
+                            <i class="bi bi-tv"></i> Vision Mission
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-person-fill"></i> HOD's Desk
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/csefaculty/">
+                            <i class="bi bi-people-fill"></i> Faculty/Staff
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            
+                            <i class="bi bi-activity"></i>Facilities
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-journal-text"></i>  Publications
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-ui-checks-grid"></i> Placement
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cseevents/">
+                            <i class="bi bi-check2-square"></i> Events
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-calendar"></i> Department Committees/Clubs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/computerscience/" >
+                            <i class="bi bi-arrow-left"></i> Back
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-3" style="background:white;">
+            <!-- Content Box Container -->
+            <div class="content-box" style="justify-items: center; background:white; color: black;">
+                <center> <h2>Events</h2></center>
+                <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 800px; margin: auto; font-family: Arial, sans-serif; line-height: 1.6;">
+                    <p>
+                      <b>1. SHUTTER UP</b><br>
+                      Online photography contest with theme "Our Campus"<br><br>
+                  
+                      <b>2. SQUIRE</b><br>
+                      A one-day workshop on "Advanced CAD Software SketchUp" in association with CAD Centre.<br><br>
+                  
+                      <b>3. MINUTE TO WIN IT CORE</b><br>
+                      Hosted a competitive event "Minute to Win It" which included various small games like balloon pyramid, backflip etc., on 28th February 2020.<br><br>
+                  
+                      <b>List of Events Conducted in the ACADEMIC YEAR 2020-2021</b><br><br>
+                  
+                      <b>1. FRESHERS DAY</b><br>
+                      CORE hosted a Freshers Day event "Puthiya Mugham". The event was conducted through online mode on 19th May 2021.<br><br>
+                  
+                      <b>2. CIVICTURE</b><br>
+                      Civil Engineering Association CORE conducted an inter-college technical fest “CIVICTURE”. The fest was launched on 29th May 2021. The programme was conducted on an online platform. A series of events were conducted as part of the programme.<br><br>
+                  
+                      <b>3. MINUTE TO WIN IT CORE</b><br>
+                      Hosted a competitive event "Minute to Win It" which included various small games like balloon pyramid, backflip etc., on 28th February 2020.<br><br>
+                  
+                      <b>HASH HUNT</b><br>
+                      In association with the fest, an inter-college treasure hunt was organised by CORE through Instagram in June 2021.<br><br>
+                  
+                      <b>EUREKA</b><br>
+                      A technical quiz competition focused on freshening up participants' minds.<br><br>
+                  
+                      <b>PES TOURNAMENT</b><br>
+                      In association with the fest, an in-college PES tournament was conducted in June 2021.<br><br>
+                  
+                      <b>TROLL COMPETITION</b><br>
+                      In association with CIVICTURE, a troll competition was conducted in June 2021.<br><br>
+                  
+                      <b>WORKSHOP</b><br>
+                      Core Civil Engineering Association of College of Engineering Muttathara in association with Autodesk ATC officially launched registration for a 3-day Online Workshop on Architectural Visualisation and 3D Modelling (Using 3Ds Max Design) as part of "CIVICTURE".<br><br>
+                  
+                      <b>TALENT HUNT</b><br>
+                      In association with the fest, a talent competition was conducted via online mode from 3rd to 9th June 2021. The event focused on drawing, painting, music, dance and other art forms.
+                    </p>
+                  </div>
+                  
+                 <script src="{% static 'my_apps/js/department.js' %}"></script>
+                </div>
+             </main>
+ 
+ {% endblock %}

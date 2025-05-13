@@ -1,0 +1,21 @@
+table {
+    width: 80%; /* Adjust width as needed */
+    border-collapse: collapse;
+    margin: 20px auto; /* Centers the table */
+}
+
+table th {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td {
+    padding: 10px;
+    text-align: center; /* Centers text inside cells */
+}

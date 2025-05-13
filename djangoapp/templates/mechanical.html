@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+{%load static%}
+	{% block content %}
+    <head>
+        <link rel="stylesheet" href="{% static 'my_apps/css/department.css' %}">
+    </head>
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark" id="Department">
+        
+    Mechanical Engineering
+        
+    </nav>
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar" style='height:750px;'>
+        <div class="position-sticky pt-3">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        <i class="bi bi-tv"></i>
+                        Vision Mission
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-activity"></i>
+                        HOD's Desk
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-list-check"></i>
+                        Faculty/Staff
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-journal-text"></i>
+                        Facilities
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-pencil-square"></i>
+                        Application form
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-ui-checks-grid"></i>
+                        Placement
+                    </a>
+                    
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-check2-square"></i>
+                        Events
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-calendar"></i>
+                        Department commities/Clubs
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    {%endblock%}

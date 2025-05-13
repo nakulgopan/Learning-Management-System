@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'my_apps/css/live.css' %}">
+</head>
+<div class="container mt-4" >
+    {% for folder, files in folder_wise_files.items %}
+        <div class="folder-section">
+            <center>
+            <h3>{{ folder }}</h3>
+            </center>
+            <div class="row">
+                {% for file in files %}
+                    <div class="col-md-4">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ file.title }}</h5>
+                                {% if file.description %}
+                                    <p class="card-text">{{ file.description }}</p>
+                                {% endif %}
+                                {% if file.video %}
+                                    <video width="100%" controls>
+                                        <source src="{{ file.video.url }}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

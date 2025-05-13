@@ -1,0 +1,101 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'my_apps/css/department.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+</head>
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark" id="Department">
+    Civil Engineering
+</nav>
+
+<div class="container-fluid ">
+    <div class="row">
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block  sidebar" style="height: 750px; background:rgb(224,224,224);  cursor:pointer;">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cevisionmission/" >
+                            <i class="bi bi-tv"></i> Vision Mission
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cehod/">
+                            <i class="bi bi-person-fill"></i> HOD's Desk
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/cefaculty/">
+                            <i class="bi bi-people-fill"></i> Faculty/Staff
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cefacilities/">
+                            <i class="bi bi-activity"></i>Facilities
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/publications/">
+                            <i class="bi bi-journal-text"></i>  Publications
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/placement/">
+                            <i class="bi bi-ui-checks-grid"></i> Placement
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Events/">
+                            <i class="bi bi-check2-square"></i> Events
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/clubs/">
+                            <i class="bi bi-calendar"></i> Department Committees/Clubs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/civilengineering/" >
+                            <i class="bi bi-arrow-left"></i> Back
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-3" style="background:rgb(255, 255, 255);">
+            <div class="content-box" style="justify-items: center; background: rgb(255, 255, 255); color: black;">
+                <center>
+                <h1>HOD Desk</h1>
+                <h3>HoD of Civil Engineering</h3>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="http://127.0.0.1:8000/media/images/ce_hod_P46THPy.jpg" alt="HOD Image" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>Dr.Ramanathan V.K</h1>
+                            <p>Head of Civil Engineering</p>
+                            <p>Associate Professor</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </center>
+            <b>
+            <p>Welcome to the department of civil engineering, it is an honour for me to welcome the young minds of the era to this prestigious institute. 
+                Civil Engineering is one of the broadest and oldest of all the engineering disciplines. Civil engineering deals with design and construction of the things that we need to function efficiently as a society.
+                 A civil engineer requires not only a high standard of engineering knowledge but also supervisory and administrative skills The Civil Engineering Department is a part of the institute since its inception. 
+                 The Department has grown over the years with qualified teaching faculty members who are passionate to impart quality education. .
+                  The infrastructure available in the department facilitates students to develop their skill and knowledge within the framework of curriculum prescribed by The A P J Abdul Kalam Technological University, Kerala. The department is actively involved in basic and applied research and consultancy services. 
+                  The department is providing quality technical and advisory support through consultancy to various private construction agencies, State Government, Central Government projects. Apart from academic knowledge, we also, train our students to face the challenges in their profession by providing value added courses like Communication and Presentation skills, building of Team Sprit through field study, etc. 
+                  The department invites eminent personnel from industry and academia to deliver technical talks on emerging areas .The department also, provides an opportunity to learn softwares like AUTOCAD, REVIT ARCHITECTURE, STAD- PRO, ETAB, MS-PROJECT etc. to make our students more digitalized. The students here are also encouraged to engage extra-curricular and co-curricular activities which are essential for personality development, 
+                nurturing of team spirit and development of organizational skills. I wish you all the best for your bright future in Civil Engineering</p></b>
+        </main>
+    </div>
+</div>
+{% endblock %}

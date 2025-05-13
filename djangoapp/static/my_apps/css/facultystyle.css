@@ -1,0 +1,225 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:url('{% static "my_apps/images/geckadoor.jpg" %}') no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+
+.wrapper {
+    width: 420px;
+    background-color:transparent;
+    border:2px solid white;
+    box-shadow: 0 0 10px black;
+    backdrop-filter: blur(20px);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    color:black;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper .input-box {
+    position: relative; 
+    width: 100%;
+    height: 50px;
+    margin: 20px 0; 
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(94, 113, 106);
+    border-radius: 40px;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px; 
+    font-size: 16px;
+}
+
+.input-box input::placeholder {
+    color: rgb(0, 0, 0);
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper button {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(33, 160, 97);
+    border: none;
+    border-radius: 40px;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size:14.5px;
+    margin:-15px 0 15px;
+    color: #000000;
+}
+.remember-forgot label input{
+    accent-color: rgb(0, 0, 0);
+    margin-right:3px;
+
+}
+.remember-forgot a{
+    color: #000000;
+    text-decoration: none;
+
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+
+}
+.wrapper .register-link{
+    font-size: 14.5px;
+    text-align:center;
+    margin-top:20px;
+    margin: 20px 0 15px;
+    color:black
+}
+.register-link p a{
+    color: #000000;
+    text-decoration: none;
+    font-size: 600;
+
+}
+.register-link p a:hover{
+text-decoration: underline;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.wrapper {
+    width: 420px;
+    background-color:transparent;
+    border:2px solid white;
+    box-shadow: 0 0 10px black;
+    backdrop-filter: blur(20px);
+    color: rgb(0, 0, 0);
+    padding:25px;
+    
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    color:black;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper .input-box {
+    position: relative; 
+    width: 100%;
+    height: 50px;
+    margin: 20px 0; 
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(94, 113, 106);
+    border-radius: 40px;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px; 
+    font-size: 16px;
+}
+
+.input-box input::placeholder {
+    color: rgb(0, 0, 0);
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper button {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(33, 160, 97);
+    border: none;
+    border-radius: 40px;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size:14.5px;
+    margin:-15px 0 15px;
+    color: #000000;
+}
+.remember-forgot label input{
+    accent-color: rgb(0, 0, 0);
+    margin-right:3px;
+
+}
+.remember-forgot a{
+    color: #000000;
+    text-decoration: none;
+
+}
+.remember-forgot a:hover{
+    text-decoration: underline;
+
+}
+.wrapper .register-link{
+    font-size: 14.5px;
+    text-align:center;
+    margin-top:20px;
+    margin: 20px 0 15px;
+    color:black
+}
+.register-link p a{
+    color: #000000;
+    text-decoration: none;
+    font-size: 600;
+
+}
+.register-link p a:hover{
+text-decoration: underline;
+} 
+

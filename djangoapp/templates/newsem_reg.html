@@ -1,0 +1,211 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{% static 'my_apps/css/stu_dashboard.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar" style="background:#E8E8E8;">
+            <div class="position-sticky pt-3 text-center">
+                {% if profile_picture %}
+                    <img src="{{ profile_picture }}" alt="Profile Picture" class="rounded-circle" width="150px" height="150px">
+                {% else %}
+                    <img src="{% static 'default-profile.png' %}" alt="Default Profile" class="rounded-circle" width="100" height="100">
+                {% endif %}
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/liveclass/">
+                        <i class="bi bi-tv"></i> Live Classes
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-activity"></i> Activity
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-list-check"></i> Survey
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/courseselection/">
+                        <i class="bi bi-journal-text"></i> My Courses
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/applicationform/">
+                        <i class="bi bi-pencil-square"></i> Application form
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-ui-checks-grid"></i> Time Table
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="bi bi-check2-square"></i> Attendance
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"href="/newsemester/" >
+                        <i class="bi bi-calendar"></i> New Semester
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background:white;">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h2>Welcome <span style="color: black;">{{ current_user }}</span>!</h2>
+                <a class='btn btn-primary' href="{% url 'logout' %}">Logout</a>
+            </div>
+            <center>
+                <button type="button" class="btn btn-success ms-4" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                    New Semester
+                </button>
+            </center>
+            <div class="d-flex justify-content-center align-items-start" style="background:white; height:750px; padding-top: 30px;">
+                <table class="table table-bordered text-center" style="width: 90%;">
+                    
+                    {% for new in details %}
+                        <tr  class="table-secondary">
+                            <th>Name</th>
+                            <td><strong>{{ new.s_fname }} {{ new.s_lname }}</strong></td>
+                        </tr>
+                        <tr>
+                            <th>Username</th>
+                            <td><strong>{{ new.username }}</strong></td>
+                        </tr>
+                        <tr class="table-secondary" >
+                            <th>Email</th>
+                            <td><strong>{{ new.semail }}</strong></td>
+                        </tr>
+                        <tr >
+                            <th>Admission Number</th>
+                            <td><strong>{{ new.adm_no }}</strong></td>
+                        </tr>
+                        <tr  class="table-secondary">
+                            <th>Branch</th>
+                            <td><strong>{{ new.s_branch }}</strong></td>
+                        </tr>
+                        <tr >
+                            <th>Semester</th>
+                            <td><strong>{{ new.Semester }}</strong></td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <th>Register Number</th>
+                            <td><strong>{{ new.univ_no }}</strong></td>
+                        </tr>
+                        <tr >
+                            <th>Phone</th>
+                            <td><strong>{{ new.sphone }}</strong></td>
+                        </tr>
+                        
+                    {% endfor %}
+                    
+                </table>
+
+                <!-- Modal Trigger Button -->
+                
+            </div>
+
+            <!-- Modal --> 
+            {% for new in details%}
+            <form method="POST" class="post-form" action="/semesterupdate/{{new.username}}/">
+                {% csrf_token %}
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">New Semester Registration</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                           
+                                <div class="form-group">
+                                  <label for="usr">First Name:</label>
+                                  <input type="text" class="form-control" id="usr" name="s_fname" value="{{new.s_fname}} ">
+                                </div><br>
+                                <div class="form-group">
+                                    <label for="usr">Last Name:</label>
+                                    <input type="text" class="form-control" id="usr" name="s_lname" value="{{new.s_lname}} ">
+                                  </div><br>
+                                <div class="form-group">
+                                    <label for="usr">Admission Number:</label>
+                                    <input type="text" class="form-control" id="adm_no" name="adm_no"value="{{new.adm_no}}" readonly>
+                                  </div><br>
+                                  <div class="form-group">
+                                    <label for="usr">University Register Number:</label>
+                                    <input type="text" class="form-control" id="usr" name="univ_no" value="{{new.univ_no}}">
+                                  </div><br>
+                                  <div class="form-group">
+                                    <label for="usr">Branch:</label>
+                                    <input type="text" class="form-control" id="usr" name="s_branch" value="{{new.s_branch}}">
+                                  </div><br>
+                                  <div class="form-group">
+                                    <label for="usr">Email:</label>
+                                    <input type="text" class="form-control" id="usr" name="semail" value="{{new.semail}}">
+                                  </div><br>
+                                  <div class="form-group">
+                                    <label for="usr">Date of Birth:</label>
+                                    <input type="text" class="form-control" id="usr" name="s_DOB" value="{{new.s_DOB}}">
+                                  </div><br>
+                                  <div class="form-group">
+                                    <label for="usr">Username:</label>
+                                    <input type="text" class="form-control" id="usr" name='username' value="{{new.username}}" readonly>
+                                  </div><br>
+                                  <div class="form-group">
+                                    <label for="usr">Password:</label>
+                                    <input type="text" class="form-control" id="usr" name='s_password' value="{{new.s_password}}" readonly>
+                                  </div><br>
+                                  <div class="form-group">
+                                    <label for="usr">Phone:</label>
+                                    <input type="text" class="form-control" id="usr" name="sphone"value="{{new.sphone}}">
+                                  </div><br>
+                                  <div class="form-group">
+                                    <label for="picture">Photo:</label>
+                                    <input type="text" class="form-control" id="picture" name="picture"value="{{new.picture}}"readonly >
+                                  </div><br>
+                                  <div class="form-group">
+                                    <label for="sel1">New Semester:</label>
+                                    <select class="form-control" id="sel1"  name= "Semester"value="{{new.Semester}}">
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                      <option>6</option>
+                                      <option>7</option>
+                                      <option>8</option>
+                                    </select>
+                            
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-success" >Save</button>
+                        </div>
+                    
+                      </form>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </main>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

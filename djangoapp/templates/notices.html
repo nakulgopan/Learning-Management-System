@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'my_apps/css/notice.css' %}"> 
+</head> 
+        {%block content%}
+        <div style="justify-content: center; background:white; height:750px;">
+            <table border="1" >
+                <tr style="margin-left:5px;">
+                    <th style="background:rgb(50, 54, 58);width:575px;color:white;text-align: center;justify-content: center;">Title</th>
+                    <th style="background:rgb(50, 54, 58);width:575px;color:white;text-align: center;justify-content: center;">Documents</th>
+                    <th style="background:rgb(50, 54, 58);width:575px;color:white;text-align: center;justify-content: center;">Links</th>
+                </tr>
+                {% for job in jobs %}
+                <tr style="background:rgb(210, 211, 213);width:510px;text-align: center;justify-content: center;">
+                    <td><strong>{{ job.title }}</strong></td>
+                    <td>
+                        {% if job.pdf_file %}
+                            <a href="{{ job.pdf_file.url }}" target="_blank">Notification</a>  
+                        {% else %}
+                            No Document
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if job.apply_link %}
+                            <a href="{{ job.apply_link }}" class="btn btn-success">Click Here</a>  
+                        {% else %}
+                            
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        
+            {%endblock%}

@@ -1,0 +1,191 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{% static 'my_apps/css/stu_dashboard.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar" style="background:#E8E8E8;">
+            <div class="position-sticky pt-3 text-center">
+                {% if profile_picture %}
+                    <img src="{{ profile_picture }}" alt="Profile Picture" class="rounded-circle" width="150px" height="150px">
+                {% else %}
+                    <img src="{% static 'default-profile.png' %}" alt="Default Profile" class="rounded-circle" width="100" height="100">
+                {% endif %}
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/liveclass/">
+                        <i class="bi bi-tv"></i> Live Classes
+                    </a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-activity"></i> Activity</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-list-check"></i> Survey</a></li>
+                <li class="nav-item"><a class="nav-link" href="/courseselection/"><i class="bi bi-journal-text"></i> My Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="/applicationform/"><i class="bi bi-pencil-square"></i> Application form</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-ui-checks-grid"></i> Time Table</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-check2-square"></i> Attendance</a></li>
+                <li class="nav-item"><a class="nav-link" href="/newsemester/"><i class="bi bi-calendar"></i> New Semester</a></li>
+            </ul>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background:white;">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h2>Welcome <span style="color: black;">{{ current_user }}</span>!</h2>
+                <a class='btn btn-primary' href="{% url 'logout' %}">Logout</a>
+            </div>
+            {% for new in details %}
+            
+            <center>
+            <button type="button" class="btn btn-outline-primary mb-3" data-bs-toggle="modal" data-bs-target="#newSemesterModal{{ forloop.counter }}">
+                Semester Course Selection
+            </button></center>
+            <div style="justify-content: center; background:white; height:750px;">
+                <table border="1" >
+                    <tr style="margin-left:5px;">
+                        <th style="background:rgb(50, 54, 58);width:575px;color:white;text-align: center;justify-content: center;">Semester</th>
+                        <th style="background:rgb(50, 54, 58);width:575px;color:white;text-align: center;justify-content: center;">Course</th>
+                        <th style="background:rgb(50, 54, 58);width:575px;color:white;text-align: center;justify-content: center;">Faculty</th>
+                    </tr>
+             
+                    
+                    <tr style="background:rgb(210, 211, 213);width:510px;text-align: center;justify-content: center;" >
+                        <td ><strong>{{ new.Semester }}</strong></td>
+                      
+                        {%for course in Course_1%}
+                        <td><strong>{{course.Course_1}}</strong><br>
+                            <strong>{{course.Course_2}}</strong><br>
+                            <strong>{{course.Course_3}}</strong><br>
+                            <strong>{{course.Course_4}}</strong><br>
+                            <strong>{{course.Course_5}}</strong></td>
+                            {%endfor%}
+                            {% comment %} {%for new in showcourses%}
+                        <td><strong>{{new.}}</strong></td>
+                      {%endfor%} {% endcomment %}
+                    </tr>
+                    {%endfor%}
+                    
+                   
+                </table>
+
+            {% for new in details %}
+            <!-- Trigger Modal Button (you can place it wherever you want) -->
+            
+
+            <!-- Modal -->
+            <div class="modal fade" id="newSemesterModal{{ forloop.counter }}" tabindex="-1" aria-labelledby="modalTitle{{ forloop.counter }}" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <form method="POST"  class="post-form" action="/courseupdate/{{new.username}}/">
+                            {% csrf_token %}
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalTitle{{ forloop.counter }}">Course Selection</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="s_fname">First Name:</label>
+                                        <input type="text" class="form-control" id="firstname" name="firstname" value="{{ new.s_fname }}">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="s_lname">Last Name:</label>
+                                        <input type="text" class="form-control" id="lastname" name="lastname" value="{{ new.s_lname }}">
+                                    </div>
+                                </div><br>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="adm_no">Admission Number:</label>
+                                        <input type="text" class="form-control" id="admission_no" name="admission_no" value="{{ new.adm_no }}">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="univ_no">University Register Number:</label>
+                                        <input type="text" class="form-control" id="university_no" name="university_no" value="{{ new.univ_no }}">
+                                    </div>
+                                </div><br>
+
+                                <div class="form-group">
+                                    <label for="s_branch">Semester:</label>
+                                    <input type="text" class="form-control" id="Semester" name="Semester" value="{{ new.Semester }}">
+                                </div><br>
+
+                                <div class="form-group">
+                                    <label for="s_branch">Branch:</label>
+                                    <input type="text" class="form-control" id="Branch" name="Branch" value="{{ new.s_branch }}">
+                                </div><br>
+                               <!-- Course 1 -->
+<div class="form-group">
+    <label for="course1">Course 1:</label>
+    <select class="form-control" id="course1" name="Course_1">
+        {% for course in Course_1 %}
+        
+            <option value="{{ course.Course_1}} ">{{ course.Course_1 }}</option>
+        {% endfor %}
+    </select>
+</div><br>
+
+<!-- Course 2 -->
+<div class="form-group">
+    <label for="course2">Course 2:</label>
+    <select class="form-control" id="course2" name="Course_2">
+        {% for course in Course_2 %}
+            <option value="{{ course.Course_2 }}">{{ course.Course_2 }}</option>
+        {% endfor %}
+    </select>
+</div><br>
+
+<!-- Course 3 (No branch filtering) -->
+<div class="form-group">
+    <label for="course3">Course 3:</label>
+    <select class="form-control" id="course3" name="Course_3">
+        {% for course in Course_3 %}
+            <option value="{{ course.Course_3 }}">{{ course.Course_3 }}</option>
+        {% endfor %}
+    </select>
+</div><br>
+
+<!-- Course 4 -->
+<div class="form-group">
+    <label for="course4">Course 4:</label>
+    <select class="form-control" id="course4" name="Course_4">
+        {% for course in Course_4 %}
+            <option value="{{ course.Course_4 }}">{{ course.Course_4 }}</option>
+        {% endfor %}
+    </select>
+</div><br>
+
+<!-- Course 5 -->
+<div class="form-group">
+    <label for="course5">Course 5:</label>
+    <select class="form-control" id="course5" name="Course_5">
+        {% for course in Course_5 %}
+        
+            <option value="{{ course.Course_5 }}">{{ course.Course_5 }}</option>
+           
+        {% endfor %}
+    </select>
+</div><br>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </main>
+    </div>
+</div>
+{% endblock %}

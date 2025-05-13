@@ -1,0 +1,120 @@
+{% extends 'index.html' %}
+
+	{% comment %} {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Faculty</title>
+        {%load static%}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'my_apps/css/facultystyle.css' %}">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    
+    <body style="background: url('{% static "my_apps/images/geckadoor.jpg" %}') no-repeat; background-size: cover;">
+        
+        
+  
+            <div class="wrapper">
+                <div class="navbar-header bg-blur" >
+                    <center>
+                    <div class="container-fluid" >
+                        <img src="{% static 'my_apps/images/geckadoor.jpg' %}"
+                   alt="Logo" style="width:100px;" class="rounded-pill">
+                    </center>
+                 <center> <p><b style="color:black;">General Intelliget Engineering College Kadoor <br></b></p></center>
+                  </a>
+                </nav>
+                </div>
+                <form method="POST" class="post-form">
+                    {%csrf_token%}
+                    <h1 style="color:black;">Faculty Login</h1>
+                    <div class="input-box">
+                        <input type="text" name="username" placeholder='Username' required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type='password' name="password" placeholder='Password' required>
+                        <i class='bx bx-lock-alt' style='color:#ffffff' ></i>
+                    </div>
+                    <div id="flash">
+                        {% if messages %}
+                          {% for message in messages %}
+                            <div class="alert alert-{{ message }} alert-danger">
+                              {{ message }}
+                            </div>
+                          {% endfor %}
+                        {% endif %}
+                        </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">Remember Me </label>
+                        <a href="#">Forgot Password..?</a>
+                    </div>
+                    <button type="submit" class="btn btn-success">Log In</button>
+                    <div class="register-link">
+                        <p>Don't have an account.? <a href="/faculty/">Register</a></p>
+                    </div>
+                </div>
+                {%endblock%}
+                
+            </body>
+            </html> {% endcomment %}
+    {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Faculty</title>
+        {%load static%}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="{% static 'my_apps/css/facultystyle.css' %}">
+    </head>
+    <center style="background-image: url('{% static "my_apps/images/Gemini_Generated_Image.jpg"%}');background-size: cover; background-position: center;">
+    <div class="wrapper">
+        <div class="navbar-header bg-blur" >
+            <center>
+            <div class="container-fluid" >
+                <img src="{% static 'my_apps/images/geckadoor.jpg' %}"
+           alt="Logo" style="width:100px;" class="rounded-pill">
+            </center>
+         <center> <p><b style="color:black;">General Intelliget Engineering College Kadoor <br></b></p></center>
+          </a>
+        </nav>
+        </div>
+    <form method="POST" class="post-form">
+        {%csrf_token%}
+        <center>
+        <h1 style="color:black;">Faculty Login</h1>
+        </center>
+        <div class="input-box">
+            <input type="text" name="username" placeholder='Username' required>
+            <i class='bx bxs-user' ></i>
+        </div>
+        <div class="input-box">
+            <input type='password' name="password" placeholder='Password' required>
+            <i class='bx bx-lock-alt' style='color:black' ></i>
+        </div>
+        <div id="flash">
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-{{ message }} alert-danger">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+            </div>
+        <div class="remember-forgot">
+            <label><input type="checkbox">Remember Me </label>
+            <a href="#">Forgot Password..?</a>
+        </div>
+        <button type="submit" class="btn btn-success">Log In</button>
+        <div class="register-link">
+            <p>Don't have an account.? <a href="/faculty/">Register</a></p>
+        </div>
+    </div>
+</center>
+<script>
+    setTimeout(function () 
+    {
+     $('#flash').fadeOut('fast');
+     },1000);
+  </script> 
+    {%endblock%}

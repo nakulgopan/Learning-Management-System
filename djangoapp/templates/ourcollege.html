@@ -1,0 +1,118 @@
+{% extends 'index.html' %}
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="{% static 'my_apps/css/campus.css' %}">
+
+    
+</head>
+
+{% block content %}
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'my_apps/css/department.css' %}">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark" id="Department">
+   Our College
+</nav>
+
+<!-- Sidebar and Content -->
+<div class="container-fluid ">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar" style="cursor:pointer;background:rgb(224,224,224); ">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/ourcollege/" >
+                            <i class="bi bi-house-door-fill"></i>Our College
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/principaldesk/">
+                            <i class="bi bi-person-fill"></i> Pricipal Desk
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/Contactus/">
+                            <i class="bi bi-telephone-fill"></i> Contact Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/" >
+                            <i class="bi bi-arrow-left"></i> Back
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="background:rgb(255, 255, 255); ">
+            <div id="main-content" class="content-box" style="justify-items:center; background:rgb(255, 255, 255); color:black; font-family:times new roman; font-size:large;">
+<div id="demo" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">  <!-- auto slide every 3s -->
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
+    </div>
+
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://cdn.musichouseschool.com/BandPlayingOnStage_1.jpg" class="d-block w-100" alt="Image 1" style="height:600px">
+        </div>
+        <div class="carousel-item">
+            <img src="https://back.3blcdn.com/sites/default/files/styles/ratio_3_2/public/triplepundit/wide/more%20sustainable%20concerts.jpg?h=f4bc3890" class="d-block w-100" alt="Image 2" style="height:600px">
+        </div>
+        <div class="carousel-item">
+            <img src="https://www.reed.edu/assets-main/images/hero/reed-campus-life-renn-fayre.jpg" class="d-block w-100" alt="Image 3" style="height:600px">
+        </div>
+        <div class="carousel-item">
+            <img src="https://wagner.edu/campus-life/files/2012/12/Cover-Photo-2015.jpg" class="d-block w-100" alt="Image 4" style="height:600px">
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?cs=srgb&dl=pexels-pixabay-267885.jpg&fm=jpg" class="d-block w-100" alt="Image 5" style="height:600px">
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGVnZSUyMGxpZmV8ZW58MHx8MHx8fDA%3D" class="d-block w-100" alt="Image 6"style="height:600px">
+        </div>
+    </div>
+
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+<div class="Details">
+    <p>
+        Engineering colleges have undergone significant changes since 1995, adapting to technological advancements and shifting educational paradigms. In the mid-90s, the educational experience was more traditional—lectures, textbooks, and hands-on lab work dominated the curriculum. The internet wasn’t as pervasive in everyday student life, and resources like online courses and tutorials were limited. Students primarily relied on physical books and the college library for research, and access to information outside the classroom was often constrained.
+
+The late 90s and early 2000s marked the beginning of technological integration in engineering education. Computers and the internet started becoming essential tools in classrooms, opening up new learning opportunities. The introduction of e-learning platforms, digital libraries, and online resources broadened students' access to knowledge. This shift helped students expand their understanding beyond the traditional boundaries of their textbooks, creating a more interconnected and resource-rich learning environment.
+
+Curriculum expansion was another key change in engineering colleges. Initially, engineering programs were heavily focused on theory, with little room for hands-on experience. Over time, however, many colleges introduced more practical elements to their curricula, including industry internships, collaborative projects, and entrepreneurship programs. This shift aimed to better prepare students for the real-world challenges they would face in the workforce. As technology evolved, new subjects like Artificial Intelligence, Robotics, and Cybersecurity began to emerge in engineering programs, giving students the opportunity to specialize in cutting-edge fields.
+
+Globalization also played a pivotal role in transforming engineering education. Since 1995, there has been a greater emphasis on international collaborations, exchange programs, and exposure to global industry practices. Engineering students now have more opportunities to study abroad or work on projects with international teams. This global perspective is invaluable, as many engineering companies now operate on a multinational scale. By learning in diverse environments, students gain a competitive edge in the global job market and are better equipped to handle cross-cultural challenges in their careers.
+
+In recent years, particularly after 2020, online and hybrid learning became integral to engineering education, especially due to the COVID-19 pandemic. Many colleges quickly adopted remote learning platforms, enabling students to continue their studies from home. This shift introduced new forms of learning that blended the flexibility of online education with traditional classroom interactions. Moreover, the rise of Industry 4.0—characterized by automation, IoT, and AI—has influenced the types of skills that students are expected to develop. Engineering colleges now focus more on innovation and real-world problem-solving, ensuring that students are equipped with the practical skills needed for today's rapidly evolving job market.
+    </p>
+</div>
+</main>
+</div>
+
+{% endblock %}
