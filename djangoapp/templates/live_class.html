@@ -1,13 +1,16 @@
 {% extends 'index.html' %}
 {% load static %}
+
 {% block content %}
 <head>
     <link rel="stylesheet" href="{% static 'my_apps/css/live.css' %}">
 </head>
+<div class="white" style="background:white;">
 <div class="container mt-4" >
     {% for folder, files in folder_wise_files.items %}
         <div class="folder-section">
             <center>
+                
             <h3>{{ folder }}</h3>
             </center>
             <div class="row">
@@ -15,6 +18,7 @@
                     <div class="col-md-4">
                         <div class="card mb-3">
                             <div class="card-body">
+                               
                                 <h5 class="card-title">{{ file.title }}</h5>
                                 {% if file.description %}
                                     <p class="card-text">{{ file.description }}</p>
@@ -32,5 +36,7 @@
             </div>
         </div>
     {% endfor %}
+    
+</div>
 </div>
 {% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'my_apps/css/department.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+</head>
+
+<div class="container-fluid ">
+    <div class="row">
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block  sidebar" style="height: 750px; background:rgb(224,224,224);  cursor:pointer;">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ecevission/" >
+                            <i class="bi bi-tv"></i> Vision Mission
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ecehod/">
+                            <i class="bi bi-person-fill"></i> HOD's Desk
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/ecefaculty/">
+                            <i class="bi bi-people-fill"></i> Faculty/Staff
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ecefacilities/">
+                            <i class="bi bi-activity"></i>Facilities
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ecepublications/">
+                            <i class="bi bi-journal-text"></i>  Publications
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eceplacement/">
+                            <i class="bi bi-ui-checks-grid"></i> Placement
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eceevents/">
+                            <i class="bi bi-check2-square"></i> Events
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ececlubs/">
+                            <i class="bi bi-calendar"></i> Department Committees/Clubs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/electronics/" >
+                            <i class="bi bi-arrow-left"></i> Back
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-3" style="background:rgb(255, 255, 255);;">
+            <!-- Content Box Container -->
+            <div class="content-box" style="justify-items: center; background: rgb(255, 255, 255); color: black;">
+                <center> <h2>Publications</h2></center>
+                <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 800px; margin: auto; font-family: Arial, sans-serif; line-height: 1.6;">
+                    <p>At the General Intelligent Engineering College Kaadoor, faculty research and academic contributions form a core pillar of our institutional excellence. Our educators not only deliver quality education but also engage actively in cutting-edge research across multiple domains of science, engineering, and technology.
+
+                        Over the years, our faculty members have published numerous papers in reputed national and international journals, presented their findings in global conferences, and contributed chapters to academic books. These publications reflect the intellectual depth, innovation, and interdisciplinary focus of our academic staff.
+                        
+                        The Department of Computer Science and Engineering, in particular, has produced impactful research in areas such as sustainable construction practices, urban planning, structural engineering, and water resource management. </p>
+                        <div class="row justify-content-center">
+                      
+                            <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-3">
+                              <div class="card" style="width: 20rem;">
+                                <img class="card-img-top" src="/media/images/Gemini_Generated_Image_ac67zbac67zbac67_crNhEaj.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                  <strong><h5 class="card-title">Dr.Priyadarshini V.K</h5></strong>
+                                  <p class="card-text">Paper Published in IEEE about ML and IOT</p>
+                              
+                                </div>
+                              </div>
+                            </div>
+                      
+                                <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-3">
+                                  <div class="card" style="width: 20rem;">
+                                    <img class="card-img-top" src="/media/images/csehod_Q18Lrf3.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                      <strong><h5 class="card-title">Dr.Mallika Vasudev</h5></strong>
+                                      <p class="card-text">Paper Published in ACSE of Information forensic</p>
+                                  
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-3">
+                                    <div class="card" style="width: 20rem;">
+                                      <img class="card-img-top" src="http://127.0.0.1:8000/media/images/cse_fac_oeNjSmE.jpg" alt="Card image cap">
+                                      <div class="card-body">
+                                        <strong><h5 class="card-title">Dr.Nithin V G</h5></strong>
+                                        <p class="card-text">Paper Published in IEEE and IECSE of AI and ML Security</p>
+                                    
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-3">
+                                    <div class="card" style="width: 20rem;">
+                                      <img class="card-img-top" src="http://127.0.0.1:8000/media/images/images_13.jpg" alt="Card image cap">
+                                      <div class="card-body">
+                                        <strong><h5 class="card-title">Bindu S Kumaravel</h5></strong>
+                                        <p class="card-text">Paper Published in IECSE of  ML Security</p>
+                                    
+                                      </div>
+                                    </div>
+                                  </div>
+
+                            </div>
+                        </div>
+ 
+                 <script src="{% static 'my_apps/js/department.js' %}"></script>
+                </div>
+             </main>
+ 
+ {% endblock %}

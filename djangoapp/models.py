@@ -142,6 +142,8 @@ class courseselected(models.Model):
     
     def __str__(self):
         return self.faculty
+    
+    
 class studentsubjects(models.Model):
     firstname = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
@@ -213,3 +215,39 @@ class attendance_faculty(models.Model):
     
     def __str__(self):
         return f"{self.Student_name}-{self.Semester}-{self.Branch}"
+
+class ecefaculty(models.Model):
+    images =models.FileField(upload_to='images/',null=True ,blank = True)
+    Name=models.CharField(max_length=255)
+    Position=models.CharField(max_length=255)
+    Qualification = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.Name  
+    
+class mefaculty(models.Model):
+    images =models.FileField(upload_to='images/',null=True ,blank = True)
+    Name=models.CharField(max_length=255)
+    Position=models.CharField(max_length=255)
+    Qualification = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.Name  
+
+class eeefaculty(models.Model):
+    images =models.FileField(upload_to='images/',null=True ,blank = True)
+    Name=models.CharField(max_length=255)
+    Position=models.CharField(max_length=255)
+    Qualification = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.Name  
+
+class asfaculty(models.Model):
+    images =models.FileField(upload_to='images/',null=True ,blank = True)
+    Name=models.CharField(max_length=255)
+    Position=models.CharField(max_length=255)
+    Qualification = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.Name  

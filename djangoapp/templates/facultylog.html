@@ -8,90 +8,91 @@
     </head>
     <body>
         <center style="background-image: url('{% static "my_apps/images/Gemini_Generated_Image.jpg"%}');background-size: cover; background-position: center;">
-        <form method="POST" class="post-form">
+        <form method="POST" enctype="multipart/form-data" class="post-form">
             {%csrf_token%}
         
-               <center style="background:transparent;">
-                <div class='form-group row'>
+               <center style="background:transparent;  backdrop-filter: blur(100px); ">
+                
+                <div class='form-group row'style="padding-left:40%;">
                     <label class="col-sm-1 col-form-label"></label>
                     <div class='col-sm-4'>
                         <h3>Faculty Registration</h3>
                     </div>
                 </div>
                 
-                <div class='form-group row'>
+                <div class='form-group row'style="padding-left:35%;">
                     <label class='col-sm-2 col-form-label'>First Name:</label>
                     <div class='col-sm-4'>
                         {{form.f_fname}}
                     </div>
                 </div>
-                <div class='form-group row'>
+                <div class='form-group row' style="padding-left:35%;">
                     <label class='col-sm-2 col-form-label'>Last Name:</label>
                     <div class='col-sm-4'>
                         {{form.f_lname}}
                     </div>
                 </div>
-                <div class='form-group row'>
+                <div class='form-group row'style="padding-left:35%;">
                     <label class='col-sm-2 col-form-label'>Date of birth:</label>
                     <div class='col-sm-4'>
                         {{form.f_Dob}}
                     </div>
                 </div>
-                <div class='form-group row'>
+                <div class='form-group row'style="padding-left:35%;">
                     <label class='col-sm-2 col-form-label'>Email:</label>
                     <div class='col-sm-4'>
                         {{form.f_email}}
                     </div>
                 </div>
-                <div class='form-group row'>
+                <div class='form-group row'style="padding-left:35%;">
                     <label class='col-sm-2 col-form-label'>Phone:</label>
                     <div class='col-sm-4'>
                         {{form.f_phone}}
                     </div>
                 </div>
-                <div class='form-group row'>
+                <div class='form-group row'style="padding-left:35%;">
                     <label class='col-sm-2 col-form-label'>Faculty ID:</label>
                     <div class='col-sm-4'>
                         {{form.Faculty_id}}
                     </div>
                 </div>
-                <div class='form-group row'>
+                <div class='form-group row'style="padding-left:35%;">
                     <label class='col-sm-2 col-form-label'>Profile Picture:</label>
                     <div class='col-sm-4'>{{ form.images }}</div>  
                     
                 </div>
-                <div class='form-group row'>
+                <div class='form-group row'style="padding-left:35%;">
                     <label class='col-sm-2 col-form-label'>Join date:</label>
                     <div class='col-sm-4'>
                         {{form.join_date}}
                     </div>
                 </div>
-                <div class='form-group row'>
+                <div class='form-group row'style="padding-left:35%;">
                     <label class='col-sm-2 col-form-label'>Branch:</label>
                     <div class='col-sm-4'>
                         {{form.f_branch}}
                     </div>
                 </div>
-                <div class='form-group row'>
+                <div class='form-group row'style="padding-left:35%;">
                     <label class='col-sm-2 col-form-label'>Role</label>
                     <div class='col-sm-4'>
                         {{form.role}}
                     </div>
                 </div>
-                <div class='form-group row'>
+                <div class='form-group row'style="padding-left:35%;">
                     <label class='col-sm-2 col-form-label'>Username:</label>
                     <div class='col-sm-4'>
                         {{form.f_username}}
                     </div>
                 </div>
 
-                <div class='form-group row'>
+                <div class='form-group row'style="padding-left:35%;">
                     <label class='col-sm-2 col-form-label'>Password:</label>
                     <div class='col-sm-4'>
                         {{form.f_password}}
                     </div>
                 </div>
-                <div class='form-group row'>
+                <div class='form-group row'style="padding-left:40%;">
                     <label class='col-sm-1 col-form-label'></label>
                     <div class='col-sm-4'>
                         <button type='submit' class='btn btn-success'>Submit</button>

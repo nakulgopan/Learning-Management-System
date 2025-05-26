@@ -9,8 +9,11 @@
         <link rel="stylesheet" href="{% static 'my_apps/css/studentregister.css' %}">
     </head>
     <body>
-        <form method="POST" class="post-form">
+         <center style="background-image: url('{% static "my_apps/images/Gemini_Generated_Image.jpg"%}');background-size: cover; background-position: center;">
+        <form method="POST" enctype="multipart/form-data" class="post-form">
             {%csrf_token%}
+        
+               <center style="background:transparent;  backdrop-filter: blur(100px); ">
             <div class='container'>
                 <br>
                 <div class='form-group row'>

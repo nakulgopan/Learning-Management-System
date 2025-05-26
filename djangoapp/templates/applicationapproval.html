@@ -63,12 +63,7 @@
 								Attendance
 							</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/newsemester/">
-								<i class="bi bi-calendar"></i>
-								Semester
-							</a>
-						</li>
+						<li class="nav-item"><a class="nav-link" href="/facultydashboard/"><i class="bi bi-arrow-return-left"></i> Back</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -120,73 +115,73 @@
     
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal{{ req.id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ req.id }}" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel{{ req.id }}">Request Details</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="firstname{{ req.id }}">First Name:</label>
-                            <input type="text" class="form-control" id="firstname{{ req.id }}" name="firstname" value="{{ req.firstname }}" readonly>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="lastname{{ req.id }}">Last Name:</label>
-                            <input type="text" class="form-control" id="lastname{{ req.id }}" name="lastname" value="{{ req.lastname }}" readonly>
-                        </div>
-                    </div><br>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="admission_no{{ req.id }}">Admission Number:</label>
-                            <input type="text" class="form-control" id="admission_no{{ req.id }}" name="admission_no" value="{{ req.admission_no }}" readonly>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="university_no{{ req.id }}">University Register Number:</label>
-                            <input type="text" class="form-control" id="university_no{{ req.id }}" name="university_no" value="{{ req.university_no }}" readonly>
-                        </div>
-                    </div><br>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="Semester{{ req.id }}">Semester:</label>
-                            <input type="text" class="form-control" id="Semester{{ req.id }}" name="Semester" value="{{ req.Semester }}" readonly>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="Branch{{ req.id }}">Branch:</label>
-                            <input type="text" class="form-control" id="Branch{{ req.id }}" name="Branch" value="{{ req.Branch }}" readonly>
-                        </div>
-                    </div><br>
-					<div class="form-group">
-						<label for="HoD">To HoD:</label>
-						<input type="text" class="form-control" id="HoD" name="HoD" value="{{ req.HoD }}" >
-					</div>
-				</div><br>
-                    <div class="form-group">
-                        <label for="Subject{{ req.id }}">Subject:</label>
-                        <input type="text" class="form-control" id="Subject{{ req.id }}" name="Subject" value="{{ req.Subject }}" readonly>
-                    </div><br>
-
-
-                    <div class="form-group">
-                        <label for="Details{{ req.id }}">Description:</label>
-                        <input class="form-control" id="Details{{ req.id }}" name="Details" value="{{ req.Details }}" readonly>
+   <div class="modal fade" id="exampleModal{{ req.id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ req.id }}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel{{ req.id }}">Request Details</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="firstname{{ req.id }}">First Name:</label>
+                        <input type="text" class="form-control" id="firstname{{ req.id }}" name="firstname" value="{{ req.firstname }}" readonly>
                     </div>
-                </div>
+                    <div class="col-md-6">
+                        <label for="lastname{{ req.id }}">Last Name:</label>
+                        <input type="text" class="form-control" id="lastname{{ req.id }}" name="lastname" value="{{ req.lastname }}" readonly>
+                    </div>
+                </div><br>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Reject</button>
-                    <button type="button" class="btn btn-success">Save & Approve</button>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="admission_no{{ req.id }}">Admission Number:</label>
+                        <input type="text" class="form-control" id="admission_no{{ req.id }}" name="admission_no" value="{{ req.admission_no }}" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="university_no{{ req.id }}">University Register Number:</label>
+                        <input type="text" class="form-control" id="university_no{{ req.id }}" name="university_no" value="{{ req.university_no }}" readonly>
+                    </div>
+                </div><br>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="Semester{{ req.id }}">Semester:</label>
+                        <input type="text" class="form-control" id="Semester{{ req.id }}" name="Semester" value="{{ req.Semester }}" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="Branch{{ req.id }}">Branch:</label>
+                        <input type="text" class="form-control" id="Branch{{ req.id }}" name="Branch" value="{{ req.Branch }}" readonly>
+                    </div>
+                </div><br>
+
+                <div class="form-group">
+                    <label for="HoD{{ req.id }}">To HoD:</label>
+                    <input type="text" class="form-control" id="HoD{{ req.id }}" name="HoD" value="{{ req.HoD }}">
+                </div><br>
+
+                <div class="form-group">
+                    <label for="Subject{{ req.id }}">Subject:</label>
+                    <input type="text" class="form-control" id="Subject{{ req.id }}" name="Subject" value="{{ req.Subject }}" readonly>
+                </div><br>
+
+                <div class="form-group">
+                    <label for="Details{{ req.id }}">Description:</label>
+                    <!-- Use a <textarea> for the description box instead of <input> -->
+                    <textarea class="form-control" id="Details{{ req.id }}" name="Details" rows="5" readonly>{{ req.Details }}</textarea>
                 </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Reject</button>
+                <button type="button" class="btn btn-success" id="approve{{ req.id }}">Save & Approve</button>
             </div>
         </div>
     </div>
-{% endfor %}
-
+</div>
+{%endfor%}
 					{%endfor%}
 			</main>
 		</div>

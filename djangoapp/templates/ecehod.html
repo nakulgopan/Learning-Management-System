@@ -1,0 +1,102 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'my_apps/css/department.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+</head>
+
+<div class="container-fluid ">
+    <div class="row">
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block  sidebar" style="height: 750px; background:rgb(224,224,224);  cursor:pointer;">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ecevission/" >
+                            <i class="bi bi-tv"></i> Vision Mission
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ecehod/">
+                            <i class="bi bi-person-fill"></i> HOD's Desk
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/ecefaculty/">
+                            <i class="bi bi-people-fill"></i> Faculty/Staff
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ecefacilities/">
+                            <i class="bi bi-activity"></i>Facilities
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ecepublications/">
+                            <i class="bi bi-journal-text"></i>  Publications
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eceplacement/">
+                            <i class="bi bi-ui-checks-grid"></i> Placement
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eceevents/">
+                            <i class="bi bi-check2-square"></i> Events
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/ececlubs/">
+                            <i class="bi bi-calendar"></i> Department Committees/Clubs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/electronics/" >
+                            <i class="bi bi-arrow-left"></i> Back
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-3" style="background:rgb(255, 255, 255);">
+            <div class="content-box" style="justify-items: center; background: rgb(255, 255, 255); color: black;">
+                <center>
+                <h1>HOD Desk</h1>
+                <h3>Head of Electronics and Communication Engineering</h3>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="	http://127.0.0.1:8000/media/images/images_1.jfif" class="card-img-top"  alt="HOD Image" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>Dr.B George</h1>
+                            <p>Head of Electronics and Communication Engineering</p>
+                            <p>Associate Professor</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </center>
+            <b>
+            <p>Here is a revised version of your message tailored for the  Head of the Department (HoD) of Electronics and Communication Engineering (ECE) at General Intelligence Engineering College (GEC).
+
+
+Welcome to the Department of Electronics and Communication Engineering
+
+It is an honour and privilege to welcome the young and dynamic minds of this generation to the prestigious General Intelligence Engineering College (GEC). The Department of Electronics and Communication Engineering (ECE) stands as one of the most vibrant and foundational branches of modern engineering, playing a critical role in connecting the world through innovation in communication and electronic systems.
+
+ECE is a discipline that deals with the design, development, and deployment of electronic devices, communication networks, embedded systems, and signal processing techniques. To thrive in this field, a student must not only master the technical aspects but also develop analytical thinking, leadership, and collaborative skills. Since its inception, the ECE department at GEC has grown significantly, supported by a team of highly qualified and dedicated faculty members committed to delivering quality education and nurturing innovation.
+
+The department is well-equipped with state-of-the-art laboratories and facilities that align with the curriculum prescribed by APJ Abdul Kalam Technological University, Kerala. Our students engage in basic and applied research, consultancy, and projects in areas like IoT, VLSI, wireless communication, and robotics. We also emphasize soft skill development through value-added courses in communication, teamwork, and professional ethics. Regular expert talks, workshops, and industry interactions ensure that students stay aligned with technological trends. I wish all our aspiring engineers a successful and fulfilling journey in the field of Electronics and Communication Engineering.
+
+
+</p></b>
+        </main>
+    </div>
+</div>
+{% endblock %}

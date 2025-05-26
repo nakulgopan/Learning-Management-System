@@ -52,23 +52,19 @@
                     <tr style="margin-left:5px;">
                         <th style="background:rgb(50, 54, 58);width:575px;color:white;text-align: center;justify-content: center;">Semester</th>
                         <th style="background:rgb(50, 54, 58);width:575px;color:white;text-align: center;justify-content: center;">Course</th>
-                        <th style="background:rgb(50, 54, 58);width:575px;color:white;text-align: center;justify-content: center;">Faculty</th>
+                        
                     </tr>
              
                     
                     <tr style="background:rgb(210, 211, 213);width:510px;text-align: center;justify-content: center;" >
                         <td ><strong>{{ new.Semester }}</strong></td>
-                      
-                        {%for course in Course_1%}
+                        {%for course in fetchcourse%}
                         <td><strong>{{course.Course_1}}</strong><br>
                             <strong>{{course.Course_2}}</strong><br>
                             <strong>{{course.Course_3}}</strong><br>
                             <strong>{{course.Course_4}}</strong><br>
                             <strong>{{course.Course_5}}</strong></td>
                             {%endfor%}
-                            {% comment %} {%for new in showcourses%}
-                        <td><strong>{{new.}}</strong></td>
-                      {%endfor%} {% endcomment %}
                     </tr>
                     {%endfor%}
                     
@@ -124,55 +120,51 @@
                                 </div><br>
                                <!-- Course 1 -->
 <div class="form-group">
-    <label for="course1">Course 1:</label>
-    <select class="form-control" id="course1" name="Course_1">
+    <label for="Course_1">Course 1:</label>
         {% for course in Course_1 %}
-        
-            <option value="{{ course.Course_1}} ">{{ course.Course_1 }}</option>
+        <input type="text" class='form-control' id="Course_1" name="Course_1" value="{{course.Course_1}}">
         {% endfor %}
     </select>
 </div><br>
 
 <!-- Course 2 -->
 <div class="form-group">
-    <label for="course2">Course 2:</label>
-    <select class="form-control" id="course2" name="Course_2">
+    <label for="Course_2">Course 2:</label>
         {% for course in Course_2 %}
-            <option value="{{ course.Course_2 }}">{{ course.Course_2 }}</option>
+        <input type="text" class='form-control' id="Course_2" name="Course_2" value="{{course.Course_2}}">
         {% endfor %}
-    </select>
+ 
 </div><br>
 
 <!-- Course 3 (No branch filtering) -->
 <div class="form-group">
-    <label for="course3">Course 3:</label>
-    <select class="form-control" id="course3" name="Course_3">
+    <label for="Course_3">Course 3:</label>
+
         {% for course in Course_3 %}
-            <option value="{{ course.Course_3 }}">{{ course.Course_3 }}</option>
+           <input type="text" class='form-control' id="Course_3" name="Course_3" value="{{course.Course_3}}">
         {% endfor %}
-    </select>
+
 </div><br>
 
 <!-- Course 4 -->
 <div class="form-group">
-    <label for="course4">Course 4:</label>
-    <select class="form-control" id="course4" name="Course_4">
-        {% for course in Course_4 %}
-            <option value="{{ course.Course_4 }}">{{ course.Course_4 }}</option>
+    <label for="Course_4">Course 4:</label>
+      {% for course in Course_4 %}
+           <input type="text" class='form-control' id="Course_4" name="Course_4" value="{{course.Course_4}}">
         {% endfor %}
-    </select>
+
 </div><br>
 
 <!-- Course 5 -->
 <div class="form-group">
-    <label for="course5">Course 5:</label>
-    <select class="form-control" id="course5" name="Course_5">
+    <label for="Course_5">Course 5:</label>
+
         {% for course in Course_5 %}
         
-            <option value="{{ course.Course_5 }}">{{ course.Course_5 }}</option>
+          <input type="text" class='form-control' id="Course_5" name="Course_5" value="{{course.Course_5}}">
            
         {% endfor %}
-    </select>
+   
 </div><br>
                             </div>
 

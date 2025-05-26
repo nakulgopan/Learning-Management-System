@@ -2,8 +2,8 @@ from copy import error
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import redirect, render
-from djangoapp.models import  Folder, Notice, application_form, cefacaulty, course, csefacaulty, faculty_login,student_login,gallery,File,courseselected, studentsubjects
-from djangoapp.forms import Attendanceform, FacultyForm, StudentForm,Liveform, applicationform, selectedform, subjectform, tutorapproval_form
+from djangoapp.models import  Folder, Notice, application_form, cefacaulty, course, csefacaulty, ecefaculty, faculty_login,student_login,gallery,File,courseselected, studentsubjects
+from djangoapp.forms import Attendanceform, FacultyForm, StudentForm,Liveform, applicationform, selectedform, subject_form, tutorapproval_form
 # from django.contrib.auth import authenticate,login
 from django.contrib import messages
 # Create your views here.
@@ -11,7 +11,7 @@ from django.contrib import messages
 #student_registration
 def student(request):
     if request.method =="POST":
-        form=StudentForm(request.POST)
+        form=StudentForm(request.POST,request.FILES)
         if form.is_valid():
             print('valid')
             try:
@@ -28,14 +28,16 @@ def student(request):
 #faculty_registration
 def Faculty(request):
     if request.method =="POST":
-        form = FacultyForm(request.POST)
+        form = FacultyForm(request.POST,request.FILES)
         if form.is_valid():
             print('valid')
             try:
-                form.save()
+                faculty =form.save()
+                print(vars(faculty))
                 print("done")
                 messages.success(request, 'Account was created for ')
                 return redirect('/fac_login/')
+                
             except:
                 pass
     else:
@@ -148,10 +150,7 @@ def live_class_update(request):
     else:
         form = Liveform()
 
-    # Fetch all live class updates including uploaded videos
-    live_classes = File.objects.all()
-
-    return render(request, 'facultyliveclass.html', {'form': form, 'live_classes': live_classes})
+    return render(request, 'facultyliveclass.html', {'form': form,})
 
 #dashboard_student
 def studentdashboard(request):
@@ -225,7 +224,18 @@ def Me_engineering(request):
 def applied(request):
     return render(request,'appliedscience.html')
 
+def csehod(request):
+    return render(request,'csehod.html')
 
+def csefacilities(request):
+    return render(request,'csefacilities.html')
+
+def csepublications(request):
+    return render(request,'csepublications.html')
+def cseplacement(request):
+    return render(request,'cseplacement.html')
+def cseclubs(request):
+    return render(request,'cseclubs.html')
 #department_civil
 def cefaculty(request):
     files= cefacaulty.objects.all()
@@ -261,7 +271,22 @@ def cseevents(request):
 def csefaculty(request):
      staff= csefacaulty.objects.all()
      return render(request,'csefaculty.html',{'staff':staff})
+ 
+def ece_faculty(request):
+     staff= ecefaculty.objects.all()
+     return render(request,'ecefaculty.html',{'staff':staff})
 
+def ecevission(request):
+    return render(request,'ecevission.html')
+
+def ecehod(request):
+    return render(request,'ecehod.html')
+
+def ecepublications(request):
+    return render(request,'ecepublications.html')
+
+def ecefacilities(request):
+    return render(request,'ecefacilities.html')
 
 def newsemester(request):
     
@@ -372,30 +397,12 @@ def courseselection(request):
         
     except student_login.DoesNotExist:
         return redirect('courseselection')
-    
-    students=student_login.objects.get(username = username)
-    
-    if request.method == "POST":
-        form = subjectform(request.POST,instance=students)
-        if form.is_valid():
-            print("formvalid")
-            try:
-                form.save()
-                print("Form saved successfully.")
-                return redirect('/courseselection/')
-            except Exception as e:
-                print(f"Error saving form: {e}")
-        else:
-            print("Form is not valid:", form.errors)
-    else:
-        form = subjectform()  
-     
+    x = studentsubjects.objects.filter(Semester=user.Semester, university_no=user.univ_no).first()
     showcourses = courseselected.objects.filter(Semester=user.Semester, Branch=user.s_branch)
+    
     profile_picture = user.picture.url if user.picture else None
     current_user = user.s_fname
     
-   
-
     # Filtering courses based on category and branch
     Course_1 = course.objects.filter(Branch=user.s_branch,Semester=user.Semester)
     Course_2 = course.objects.filter(Branch=user.s_branch,Semester=user.Semester)
@@ -413,67 +420,46 @@ def courseselection(request):
         'Course_4': Course_4,
         'Course_5': Course_5,
         'showcourses': showcourses,
-        'form': form
+        # 'subjects':subjects
+       
        
     }
 
     return render(request, "courseselection.html", context)
 
-# def course_selection(request):
-#     username = request.session.get('username')
-
-#     if not username:
-#         return redirect('login')  # Redirect to login instead of looping
-
-#     try:
-#         user = StudentLogin.objects.get(username=username)
-#     except StudentLogin.DoesNotExist:
-#         return redirect('login')
-
-#     if request.method == "POST":
-#         form = SubjectForm(request.POST, instance=user)
-#         if form.is_valid():
-#             try:
-#                 form.save()
-#                 print("Form saved successfully.")
-#                 return redirect('/courseselection/')
-#             except Exception as e:
-#                 print(f"Error saving form: {e}")
-#         else:
-#             print("Form is not valid:", form.errors)
-#     else:
-#         form = SubjectForm(instance=user)
-
-#     # Get all matching courses once
-#     all_courses = Course.objects.filter(Branch=user.s_branch, Semester=user.Semester)
-
-#     context = {
-#         'current_user': user.s_fname,
-#         'profile_picture': user.picture.url if user.picture else None,
-#         'details': [user],
-#         'courses': all_courses,  # send as a single list
-#         'showcourses': CourseSelected.objects.filter(Semester=user.Semester, Branch=user.s_branch),
-#         'form': form,
-#     }
-
-#     return render(request, "courseselection.html", context)
-
-def cousre_update(request,username):
+def cousre_update(request, username):
     username = request.session.get('username')
-    
+
     if not username:
         return redirect('stulogin')
+
     try:
         students = student_login.objects.get(username=username)
     except student_login.DoesNotExist:
         return redirect('stulogin')
+    student_subjects = studentsubjects.objects.filter(
+        university_no=students.univ_no,
+        Semester=students.Semester
+    ).first()
 
+    if not student_subjects:
+        student_subjects = studentsubjects(
+            firstname=students.s_fname,
+            lastname=students.s_lname,
+            admission_no=students.adm_no,
+            university_no=students.univ_no,
+            Branch=students.s_branch,
+            Semester=students.Semester
+        )
+
+    # ✅ Use student_subjects in the form, not students
     if request.method == "POST":
-        form = subjectform(request.POST, instance=students)
+        form = subject_form(request.POST, instance=student_subjects)
         if form.is_valid():
             print("formvalid")
             try:
-                form.save()
+                saved = form.save()
+                print(vars(saved))  # ✅ Now shows Course_1 to Course_5
                 print("Form saved successfully.")
                 return redirect('/courseselection/')
             except Exception as e:
@@ -481,20 +467,33 @@ def cousre_update(request,username):
         else:
             print("Form is not valid:", form.errors)
     else:
-        form = subjectform(instance=students)  
-        
+        form = subject_form(instance=student_subjects)  # ✅ Same fix for GET
+    
+    fetchcourse = studentsubjects.objects.get(Semester = student_subjects.Semester, university_no = student_subjects.university_no)
+
+    # Keep everything else as-is
     all_courses = courseselected.objects.filter(Branch=students.s_branch, Semester=students.Semester)
+    Course_1 = course.objects.filter(Branch=students.s_branch, Semester=students.Semester)
+    Course_2 = course.objects.filter(Branch=students.s_branch, Semester=students.Semester)
+    Course_3 = course.objects.filter(Branch=students.s_branch, Semester=students.Semester)  
+    Course_4 = course.objects.filter(Branch=students.s_branch, Semester=students.Semester)
+    Course_5 = course.objects.filter(Branch=students.s_branch, Semester=students.Semester)
 
     context = {
         'current_user': students.s_fname,
         'profile_picture': students.picture.url if students.picture else None,
         'details': [students],
-        'courses': all_courses,  # send as a single list
+        'courses': all_courses,
         'showcourses': courseselected.objects.filter(Semester=students.Semester, Branch=students.s_branch),
         'form': form,
+        'Course_1': Course_1,
+        'Course_2': Course_2,
+        'Course_3': Course_3,
+        'Course_4': Course_4,
+        'Course_5': Course_5,
+        'fetchcourse':fetchcourse
     }
-        
-   
+
     return render(request, 'courseselection.html', context)
 
     
@@ -597,43 +596,97 @@ def tutorapproval(request):
 
 #attendace faculty
 
+# def attendance_faculty(request):
+    # if 'f_username' not in request.session:
+    #     return redirect('faclogin')
+
+    # username = request.session.get('f_username')
+    # try:
+    #     user = faculty_login.objects.get(f_username=username)
+    # except faculty_login.DoesNotExist:
+    #     return redirect('faclogin')
+    # if request.method == "POST":
+    #     form = Attendanceform(request.POST)
+    #     if form.is_valid():
+    #         print("Error saving form:", e)
+    #         try:
+    #             instance = form.save(commit=False)
+    #             instance.faculty = user  # assuming the model has a `faculty` field
+    #             instance.save()
+    #             print("Attendance marked")
+    #             return redirect('/admin/')
+    #         except Exception as e:
+    #             print("Error saving form:", e)
+    #     else:
+    #         print("Form is not valid:", form.errors)
+    # else:
+    #     form = Attendanceform()
+    
+    # faculty = courseselected.objects.get(user = faculty)    
+    # Courses = courseselected.objects.filter(Branch = faculty.Branch, Semester = faculty.Semester,Subject = faculty.Courses)
+    # profile_picture = user.images.url if user.images else None
+    # current_user = user.f_fname
+    # context = {
+    #     'current_user': current_user,
+    #     'profile_picture': profile_picture,
+    #     'details': [user],
+    #     'form':form,
+    #     'Courses':Courses
+       
+       
+    # }
+    # return render(request,"attendancebyfaculty.html",context)
 def attendance_faculty(request):
     if 'f_username' not in request.session:
         return redirect('faclogin')
 
     username = request.session.get('f_username')
+
     try:
         user = faculty_login.objects.get(f_username=username)
     except faculty_login.DoesNotExist:
         return redirect('faclogin')
+
     if request.method == "POST":
         form = Attendanceform(request.POST)
         if form.is_valid():
-            print("Error saving form:", e)
             try:
                 instance = form.save(commit=False)
-                instance.faculty = user  # assuming the model has a `faculty` field
+                instance.faculty = user  # Only if Attendance model has a ForeignKey to faculty_login
                 instance.save()
                 print("Attendance marked")
-                return redirect('/admin/')
+                return redirect('/admin/')  # Or any success page
             except Exception as e:
                 print("Error saving form:", e)
         else:
             print("Form is not valid:", form.errors)
     else:
         form = Attendanceform()
+
+    # Fetch course details based on faculty's username
+   
+    # Change from .get() to .filter() to handle multiple courses
+    faculty_data = courseselected.objects.filter(faculty=user)  # This returns a queryset
+    Courses = courseselected.objects.filter(
+        Branch__in=[course.Branch for course in faculty_data],  # Filter courses by Branch and Semester
+        Semester__in=[course.Semester for course in faculty_data],
+        Courses__in=[course.Courses for course in faculty_data]
+    )
     
-    faculty = courseselected.objects.get()    
-    Courses = courseselected.objects.filter(Branch = faculty.Branch, Semester = faculty.Semester,Subject = faculty.Courses)
+    # You need to adjust how you fetch studentdetails to account for multiple courses
+    # If you want to fetch students based on the same semester, use filter
+    studentdetails = studentsubjects.objects.filter(Semester__in=[course.Semester for course in faculty_data])
+    
     profile_picture = user.images.url if user.images else None
     current_user = user.f_fname
+
     context = {
         'current_user': current_user,
         'profile_picture': profile_picture,
         'details': [user],
-        'form':form,
-        'Courses':Courses
-       
-       
+        'form': form,
+        'Courses': Courses,
+        'studentdetails': studentdetails
     }
-    return render(request,"attendancebyfaculty.html",context)
+
+    return render(request, "attendancebyfaculty.html", context)

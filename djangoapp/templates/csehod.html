@@ -1,0 +1,101 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'my_apps/css/department.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+</head>
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark" id="Department">
+   Computer Science and Engineering
+</nav>
+
+<div class="container-fluid ">
+    <div class="row">
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block  sidebar" style="height: 750px; background:rgb(224,224,224);  cursor:pointer;">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/csevission/" >
+                            <i class="bi bi-tv"></i> Vision Mission
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/csehod/">
+                            <i class="bi bi-person-fill"></i> HOD's Desk
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="/csefaculty/">
+                            <i class="bi bi-people-fill"></i> Faculty/Staff
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/csefacilities/">
+                            <i class="bi bi-activity"></i>Facilities
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/csepublications/">
+                            <i class="bi bi-journal-text"></i>  Publications
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cseplacement/">
+                            <i class="bi bi-ui-checks-grid"></i> Placement
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cseEvents/">
+                            <i class="bi bi-check2-square"></i> Events
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cseclubs/">
+                            <i class="bi bi-calendar"></i> Department Committees/Clubs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/computerscience/" >
+                            <i class="bi bi-arrow-left"></i> Back
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-3" style="background:rgb(255, 255, 255);">
+            <div class="content-box" style="justify-items: center; background: rgb(255, 255, 255); color: black;">
+                <center>
+                <h1>HOD Desk</h1>
+                <h3>HoD of Computer Science and Engineering</h3>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="/media/images/csehod_Q18Lrf3.jpg" class="card-img-top"  alt="HOD Image" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1>Dr.Mallika Vasudev</h1>
+                            <p>Head of Computer Science and Engineering</p>
+                            <p>Associate Professor</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </center>
+            <b>
+            <p>Welcome to the department of Computer Science and Engineering , it is an honour for me to welcome the young minds of the era to this prestigious institute. 
+                Computer Science and Engineering is one of the broadest and oldest of all the engineering disciplines. Computer Science and Engineering  deals with design and construction of the things that we need to function efficiently as a society.
+                 A Computer Science and Engineering engineer requires not only a high standard of engineering knowledge but also supervisory and administrative skills The Civil Engineering Department is a part of the institute since its inception. 
+                 The Department has grown over the years with qualified teaching faculty members who are passionate to impart quality education. .
+                  The infrastructure available in the department facilitates students to develop their skill and knowledge within the framework of curriculum prescribed by The A P J Abdul Kalam Technological University, Kerala. The department is actively involved in basic and applied research and consultancy services. 
+                  The department is providing quality technical and advisory support through consultancy to various private construction agencies, State Government, Central Government projects. Apart from academic knowledge, we also, train our students to face the challenges in their profession by providing value added courses like Communication and Presentation skills, building of Team Sprit through field study, etc. 
+                  The department invites eminent personnel from industry and academia to deliver technical talks on emerging areas .The students here are also encouraged to engage extra-curricular and co-curricular activities which are essential for personality development, 
+                nurturing of team spirit and development of organizational skills. I wish you all the best for your bright future in Computer Science and Engineering</p></b>
+        </main>
+    </div>
+</div>
+{% endblock %}

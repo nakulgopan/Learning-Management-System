@@ -28,10 +28,12 @@ class selectedform(forms.ModelForm):
         model = courseselected
         fields =['Semester','Courses','Branch','faculty']
         
-class subjectform(forms.ModelForm):
+class subject_form(forms.ModelForm):
     class Meta:
         model = studentsubjects
-        fields = "__all__"
+        fields = ['Course_1', 'Course_2', 'Course_3', 'Course_4', 'Course_5', 
+                  'firstname', 'lastname', 'admission_no', 'university_no', 'Branch', 'Semester']
+
 
 class applicationform(forms.ModelForm):
     class Meta:
