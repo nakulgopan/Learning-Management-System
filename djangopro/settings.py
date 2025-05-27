@@ -76,15 +76,18 @@ WSGI_APPLICATION = 'djangopro.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+        'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'studentdb',
         'USER': 'root',
         'PASSWORD': '*******'
         'HOST':'localhost',
         'PORT':'3306',
+    
+    
     }
-}
+        }
+
 
 
 # Password validation

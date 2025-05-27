@@ -31,11 +31,8 @@ admin.site.register(course)
 admin.site.register(courseselected)
 admin.site.register(application_form)
 admin.site.register(tutorapprovalform)
-<<<<<<< HEAD
 admin.site.register(studentsubjects)
 admin.site.register(ecefaculty)
 admin.site.register(eeefaculty)
 admin.site.register(mefaculty)
 admin.site.register(asfaculty)
-=======
->>>>>>> 54bc1ed2572ecd6bba3a2d2994c2e099e2690e8f
